@@ -86,17 +86,17 @@ public class God implements CommandExecutor {
             return true;
         }
         if (!(sender instanceof Player)) {
-            plugin.sendMessage(sender, Lang.ERROR_PLAYER_COMMAND.get());
+        	sender.sendMessage("Lang.ERROR_PLAYER_COMMAND.get()");
             return true;
         }
         Player player = (Player) sender;
         PlayerConfig config = PlayerConfig.getConfig(player);
         if (!config.getBoolean("god")) {
             config.set("god", true);
-            plugin.sendMessage(sender, Lang.GOD_ENABLED.get());
+            sender.sendMessage("Lang.GOD_ENABLED.get()");
         } else {
             config.set("god", false);
-            plugin.sendMessage(sender, Lang.GOD_DISABLED.get());
+            sender.sendMessage("Lang.GOD_DISABLED.get()");
         }
         config.forceSave();
         return true;
