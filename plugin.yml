@@ -3,3 +3,6 @@ main: com.aris.aris.Main
 version: 1.01 (alpha)
 load: startup
 commands:
+  aris:
+    description: Test's aris.
+ 
