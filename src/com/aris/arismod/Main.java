@@ -1,4 +1,4 @@
-package com.SpinCat360.arismod;
+package com.aris.arismod;
 
 import org.bukkit.event.Listener;
 
@@ -17,7 +17,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 // Import aris scripts
-import com.SpinCat360.arismod.ArisCommands;
+import com.aris.arismod.ArisCommands;
 
 
 public class Main extends JavaPlugin{

@@ -1,4 +1,4 @@
-package com.SpinCat360.arismod;
+package com.aris.arismod;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
