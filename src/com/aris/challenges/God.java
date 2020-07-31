@@ -59,28 +59,28 @@ public class God implements CommandExecutor {
  
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!sender.hasPermission("command.god")) {
-            plugin.sendMessage(sender, "Lang.ERROR_COMMAND_NO_PERMISSION.get()");
+        	sender.sendMessage("Lang.ERROR_COMMAND_NO_PERMISSION.get()");
             return true;
         }
         if (args.length > 0) {
             if (!sender.hasPermission("others.god")) {
-                plugin.sendMessage(sender, "Lang.ERROR_COMMAND_NO_PERMISSION.get()");
+            	sender.sendMessage("Lang.ERROR_COMMAND_NO_PERMISSION.get()");
                 return true;
             }
             Player target = Bukkit.getPlayer(args[0]);
             if (target == null) {
-                plugin.sendMessage(sender, "Lang.ERROR_PLAYER_NOT_ONLINE.get()");
+            	sender.sendMessage("Lang.ERROR_PLAYER_NOT_ONLINE.get()");
                 return true;
             }
             PlayerConfig config = PlayerConfig.getConfig(target);
             if (!config.getBoolean("god")) {
                 config.set("god", true);
-                plugin.sendMessage(target, "Lang.GOD_ENABLED_BY.get().replace('{player}', sender.getName())");
-                plugin.sendMessage(sender, "Lang.GOD_ENABLED_FOR.get().replace('{player}', target.getName())");
+                target.sendMessage("Lang.GOD_ENABLED_BY.get().replace('{player}', sender.getName())");
+                sender.sendMessage("Lang.GOD_ENABLED_FOR.get().replace('{player}', target.getName())");
             } else {
                 config.set("god", false);
-                plugin.sendMessage(target, "ang.GOD_DISABLED_BY.get().replace('{player}', sender.getName())");
-                plugin.sendMessage(sender, "Lang.GOD_DISABLED_FOR.get().replace('{player}', target.getName())");
+                target.sendMessage("Lang.GOD_DISABLED_BY.get().replace('{player}', sender.getName())");
+                sender.sendMessage("Lang.GOD_DISABLED_FOR.get().replace('{player}', target.getName())");
             }
             config.forceSave();
             return true;
