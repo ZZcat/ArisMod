@@ -11,6 +11,7 @@ import com.aris.challenges.God;
 import com.aris.challenges.HealCommand;
 import com.aris.challenges.MyFirstListener;
 import com.aris.aris.PlayerHandler;
+import com.aris.challenges.ArisCommands;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
@@ -35,12 +36,18 @@ public class Main extends JavaPlugin{
 	public void onEnable () {
 		getLogger().info("Aris has been enabled!");
 		
+		// ARIS command
+    	this.getCommand("aris").setExecutor(new ArisCommands());
+		
 		// Start myfirstl listener
 		myfirstl = new MyFirstListener();
     	getServer().getPluginManager().registerEvents(myfirstl, this);
     	
     	// Start god command listener
     	this.getCommand("god").setExecutor(new God());
+
+    	// Start heal command listener
+    	this.getCommand("heal").setExecutor(new HealCommand());
 	}
 	
 	@Override

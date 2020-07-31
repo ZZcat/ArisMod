@@ -7,3 +7,5 @@ commands:
     description: Unknown
   god:
     description: God mode... for testing
+  heal:
+    description: Heal the specified player

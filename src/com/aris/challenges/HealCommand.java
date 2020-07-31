@@ -17,6 +17,7 @@ public class HealCommand implements CommandExecutor {
 					player.setHealth(20);
 					player.setFoodLevel(20);
 					player.setSaturation(20);
+			        player.setFireTicks(0);  // Set full-norm fire
 					
 					for (Player players : Bukkit.getOnlinePlayers()) {
 						players.sendMessage(player.getName() + " healed successfuly");
@@ -34,7 +35,7 @@ public class HealCommand implements CommandExecutor {
 				}
 			}
 			else {
-				player.sendMessage("You have to be opped to use this command");
+				player.sendMessage("You must be opped to use this command");
 			}
 		}
 		else {
