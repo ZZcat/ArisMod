@@ -24,10 +24,15 @@ import org.bukkit.plugin.EventExecutor;
 import org.bukkit.plugin.PluginManager;
 
 import com.aris.aris.Main;
+import com.aris.aris.PlayerData;
 import com.aris.aris.PlayerHandler;
  
 public class God implements CommandExecutor {
     private Main plugin;
+
+    public static PlayerHandler playerHandler;
+    public static PlayerData playerData;
+    
  
     public God() {
         //this.plugin = plugin;
@@ -73,8 +78,9 @@ public class God implements CommandExecutor {
             	sender.sendMessage("Lang.ERROR_PLAYER_NOT_ONLINE.get()");
                 return true;
             }
-            PlayerData config = PlayerHandler.getData(target);
-            if (!config.getBoolean("god")) {
+            PlayerData config = playerHandler.getData(target);
+            if (!config.get("god")) {
+            //if (!playerHandler.isGod(target)){
                 config.set("god", true);
                 target.sendMessage("Lang.GOD_ENABLED_BY.get().replace('{player}', sender.getName())");
                 sender.sendMessage("Lang.GOD_ENABLED_FOR.get().replace('{player}', target.getName())");
@@ -83,7 +89,7 @@ public class God implements CommandExecutor {
                 target.sendMessage("Lang.GOD_DISABLED_BY.get().replace('{player}', sender.getName())");
                 sender.sendMessage("Lang.GOD_DISABLED_FOR.get().replace('{player}', target.getName())");
             }
-            config.forceSave();
+            config.save();
             return true;
         }
         if (!(sender instanceof Player)) {
@@ -91,15 +97,15 @@ public class God implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-        PlayerData config = PlayerHandler.getData(player);
-        if (!config.getBoolean("god")) {
+        PlayerData config = playerHandler.getData(player);
+        if (!config.get("god")) {
             config.set("god", true);
             sender.sendMessage("Lang.GOD_ENABLED.get()");
         } else {
             config.set("god", false);
             sender.sendMessage("Lang.GOD_DISABLED.get()");
         }
-        config.forceSave();
+        config.save();
         return true;
     }
  
@@ -114,7 +120,7 @@ public class God implements CommandExecutor {
             return;
         }
         Player player = (Player) entity;
-        if (!PlayerHandler.getData(player).isGod()) { // May have changed incorrectly
+        if (! (boolean) playerHandler.getData(player).get("god")) { // May have changed incorrectly
             return;
         }
         if (event instanceof FoodLevelChangeEvent) {

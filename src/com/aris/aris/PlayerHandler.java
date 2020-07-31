@@ -21,4 +21,9 @@ public class PlayerHandler {
     public boolean isPlayer(Player p) {
         return players.containsKey(p);
     }
+    // Test
+    //public boolean isGod(Player p) {
+    //	return players.get(p).isGod();
+    //}
+    
 }
