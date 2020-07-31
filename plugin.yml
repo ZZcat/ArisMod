@@ -1,6 +1,6 @@
 name: ArisMod
 main: com.SpinCat360.arismod.Main
-version: 1.0 (alpha)
+version: 1.01 (alpha)
 load: startup
 commands:
   aris:
