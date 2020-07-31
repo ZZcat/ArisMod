@@ -1,5 +1,5 @@
 name: ArisMod
-main: com.aris.arismod.Main
+main: com.aris.challenges.Main
 version: 1.01 (alpha)
 load: startup
 commands:
