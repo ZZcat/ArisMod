@@ -8,6 +8,7 @@ import org.bukkit.util.noise.OctaveGenerator;
 import org.bukkit.util.noise.SimplexOctaveGenerator;
 
 import com.aris.challenges.God;
+import com.aris.challenges.GodListener;
 import com.aris.challenges.HealCommand;
 import com.aris.challenges.MyFirstListener;
 import com.aris.aris.PlayerHandler;
@@ -43,8 +44,9 @@ public class Main extends JavaPlugin{
 		myfirstl = new MyFirstListener();
     	getServer().getPluginManager().registerEvents(myfirstl, this);
     	
-    	// Start god command listener
+    	// god
     	this.getCommand("god").setExecutor(new God());
+    	getServer().getPluginManager().registerEvents(new GodListener(), this);
 
     	// Start heal command listener
     	this.getCommand("heal").setExecutor(new HealCommand());
