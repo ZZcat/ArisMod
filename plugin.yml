@@ -1,0 +1,8 @@
+name: ArisMod
+main: com.SpinCat360.arismod.Main
+version: 1.0 (alpha)
+load: startup
+commands:
+  aris:
+    description: Test's aris
+   
