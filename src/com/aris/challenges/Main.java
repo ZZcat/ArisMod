@@ -6,6 +6,9 @@ import java.util.Random;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.util.noise.OctaveGenerator;
 import org.bukkit.util.noise.SimplexOctaveGenerator;
+
+import com.galexz.DiamondArmorZombies.MyFirstListener;
+
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -21,10 +24,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class Main extends JavaPlugin{
-
+	public MyFirstListener myfirstl;
+	
 	@Override
 	public void onEnable () {
 		getLogger().info("Aris has been enabled!");
+		
+		myfirstl = new MyFirstListener();
+    	getServer().getPluginManager().registerEvents(myfirstl, this);
 	}
 	
 	@Override
