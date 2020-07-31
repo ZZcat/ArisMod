@@ -28,13 +28,10 @@ public class PlayerHandler {
     }
     
     public PlayerData getData(Player p) {
-    	log.info("1");
-
     	if (!playerIsRegistered(p)) {
     		log.info("reging......................");
     		registerPlayer(p);
     	}
-    	log.info("2");
     	return players.get(p);
     }
     
