@@ -4,5 +4,5 @@ version: 1.01 (alpha)
 load: startup
 commands:
   aris:
-    description: Test's aris...
+    description: Test's aris....
    
