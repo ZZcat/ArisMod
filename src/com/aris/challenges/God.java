@@ -24,15 +24,14 @@ import org.bukkit.plugin.EventExecutor;
 import org.bukkit.plugin.PluginManager;
 
 import com.aris.aris.Main;
+import com.aris.aris.PlayerHandler;
  
 public class God implements CommandExecutor {
     private Main plugin;
  
-    public God(Main plugin) {
-        this.plugin = plugin;
-        /*if (!plugin.registerCommand(this, "god")) {
-            return;
-        }*/
+    public God() {
+        //this.plugin = plugin;
+
         PluginManager pluginManager = plugin.getServer().getPluginManager();
         Listener listener = new Listener() {
         };
@@ -74,7 +73,7 @@ public class God implements CommandExecutor {
             	sender.sendMessage("Lang.ERROR_PLAYER_NOT_ONLINE.get()");
                 return true;
             }
-            PlayerConfig config = PlayerConfig.getConfig(target);
+            PlayerData config = PlayerHandler.getData(target);
             if (!config.getBoolean("god")) {
                 config.set("god", true);
                 target.sendMessage("Lang.GOD_ENABLED_BY.get().replace('{player}', sender.getName())");
@@ -92,7 +91,7 @@ public class God implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-        PlayerConfig config = PlayerConfig.getConfig(player);
+        PlayerData config = PlayerHandler.getData(player);
         if (!config.getBoolean("god")) {
             config.set("god", true);
             sender.sendMessage("Lang.GOD_ENABLED.get()");
@@ -115,7 +114,7 @@ public class God implements CommandExecutor {
             return;
         }
         Player player = (Player) entity;
-        if (!PlayerConfig.getConfig(player).getBoolean("god", false)) {
+        if (!PlayerHandler.getData(player).isGod()) { // May have changed incorrectly
             return;
         }
         if (event instanceof FoodLevelChangeEvent) {
