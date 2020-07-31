@@ -1,4 +1,4 @@
-package com.aris.challenges;
+package com.aris.aris;
 
 import org.bukkit.event.Listener;
 

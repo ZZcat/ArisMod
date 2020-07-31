@@ -22,6 +22,8 @@ import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.plugin.EventExecutor;
 import org.bukkit.plugin.PluginManager;
+
+import com.aris.aris.Main;
  
 public class God implements CommandExecutor {
     private Main plugin;
