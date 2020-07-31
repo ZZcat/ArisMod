@@ -14,16 +14,19 @@ public class PlayerHandler {
         players = new HashMap<Player, PlayerData>();
     }
 
-    public PlayerData getData(Player p) {
-    	return players.get(p);
+    public boolean playerIsRegistered(Player p) {
+    	return players.containsKey(p);
     }
     
-    public boolean isPlayer(Player p) {
-        return players.containsKey(p);
+    public void registerPlayer(Player p) {
+    	players.put(p, new PlayerData());
     }
-    // Test
-    //public boolean isGod(Player p) {
-    //	return players.get(p).isGod();
-    //}
+    
+    public PlayerData getData(Player p) {
+    	if (!playerIsRegistered(p)) {
+    		registerPlayer(p);
+    	}
+    	return players.get(p);
+    }
     
 }

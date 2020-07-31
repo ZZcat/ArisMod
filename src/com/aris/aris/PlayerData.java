@@ -4,7 +4,7 @@ import java.util.HashMap; // import the HashMap class
 
 public class PlayerData {
 	private boolean isGod = false;
-	private HashMap<String, Boolean> values = new HashMap<String, Object>();
+	private HashMap<String, Object> values = new HashMap<String, Object>();
 
 	// Values
 	public void set(String name, Object value) {
