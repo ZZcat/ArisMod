@@ -1,7 +1,5 @@
 package com.aris.challenges;
 
-// From: https://pastebin.com/wpszEVJZ
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,9 +26,6 @@ import com.aris.aris.PlayerData;
 import com.aris.aris.PlayerHandler;
  
 public class God implements CommandExecutor {
- 
-
-    public static PlayerHandler playerHandler;
     public static PlayerData playerData;
     
  
@@ -42,7 +37,7 @@ public class God implements CommandExecutor {
 		}
 		Player player = (Player) sender;
 		player.sendMessage("Toogling god for you " + player.getName());
-		PlayerData config = playerHandler.getData(player);
+		PlayerData config = Main.playerHandler.getData(player);
 		if ((boolean) config.get("god")) {
 			player.sendMessage("Turning god off");
 			config.set("god", false);

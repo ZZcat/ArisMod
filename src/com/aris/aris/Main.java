@@ -10,6 +10,7 @@ import org.bukkit.util.noise.SimplexOctaveGenerator;
 import com.aris.challenges.God;
 import com.aris.challenges.HealCommand;
 import com.aris.challenges.MyFirstListener;
+import com.aris.aris.PlayerHandler;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
@@ -28,6 +29,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin{
 	public MyFirstListener myfirstl;
+	public static PlayerHandler playerHandler = new PlayerHandler();
 	
 	@Override
 	public void onEnable () {

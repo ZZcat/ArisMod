@@ -6,7 +6,12 @@ import java.util.HashMap;
 import org.bukkit.entity.Player;
 import com.aris.aris.PlayerData;
 
+
+import java.util.logging.Logger;
+
 public class PlayerHandler {
+
+    public static Logger log = Logger.getLogger("Minecraft");
     private HashMap<Player,PlayerData> players;
     
     public PlayerHandler () {
@@ -23,9 +28,13 @@ public class PlayerHandler {
     }
     
     public PlayerData getData(Player p) {
+    	log.info("1");
+
     	if (!playerIsRegistered(p)) {
+    		log.info("reging......................");
     		registerPlayer(p);
     	}
+    	log.info("2");
     	return players.get(p);
     }
     
