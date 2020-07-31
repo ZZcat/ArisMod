@@ -32,6 +32,7 @@ public class Main extends JavaPlugin{
 		
 		myfirstl = new MyFirstListener();
     	getServer().getPluginManager().registerEvents(myfirstl, this);
+    	myfirstl.
 	}
 	
 	@Override
