@@ -8,8 +8,8 @@ import org.bukkit.util.noise.OctaveGenerator;
 import org.bukkit.util.noise.SimplexOctaveGenerator;
 
 import com.aris.challenges.God;
-import com.galexz.DiamondArmorZombies.HealCommand;
-import com.galexz.DiamondArmorZombies.MyFirstListener;
+import com.aris.challenges.HealCommand;
+import com.aris.challenges.MyFirstListener;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
@@ -33,9 +33,11 @@ public class Main extends JavaPlugin{
 	public void onEnable () {
 		getLogger().info("Aris has been enabled!");
 		
+		// Start myfirstl listener
 		myfirstl = new MyFirstListener();
     	getServer().getPluginManager().registerEvents(myfirstl, this);
     	
+    	// Start god command listener
     	this.getCommand("god").setExecutor(new God());
 	}
 	

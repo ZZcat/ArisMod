@@ -5,4 +5,5 @@ load: startup
 commands:
   aris:
     description: Unknown
- 
+  god:
+    description: God mode... for testing

@@ -1,4 +1,4 @@
-package com.aris.arismod;
+package com.aris.challenges;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

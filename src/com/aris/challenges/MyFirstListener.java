@@ -1,4 +1,4 @@
-package com.galexz.DiamondArmorZombies;
+package com.aris.challenges;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Creeper;
