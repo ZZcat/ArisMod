@@ -3,7 +3,6 @@ package com.aris.aris;
 import java.util.HashMap; // import the HashMap class
 
 public class PlayerData {
-	//private boolean isGod = false;
 	private static HashMap<String, Object> values = new HashMap<String, Object>();
 
 	public static void main () {
@@ -21,14 +20,6 @@ public class PlayerData {
 		}
 		return values.get(name);
 	}
-	
-	/*/ God COMMENT OUT OLD
-    public boolean isGod() {
-        return isGod;
-    }	
-    public void setGod(boolean value) {
-    	isGod = value;
-    }*/
     
     // Todo
     public void save() {
