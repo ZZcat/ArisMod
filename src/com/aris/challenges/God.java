@@ -79,7 +79,7 @@ public class God implements CommandExecutor {
                 return true;
             }
             PlayerData config = playerHandler.getData(target);
-            if (!config.get("god")) {
+            if (! (boolean) config.get("god")) {
             //if (!playerHandler.isGod(target)){
                 config.set("god", true);
                 target.sendMessage("Lang.GOD_ENABLED_BY.get().replace('{player}', sender.getName())");
@@ -98,7 +98,7 @@ public class God implements CommandExecutor {
         }
         Player player = (Player) sender;
         PlayerData config = playerHandler.getData(player);
-        if (!config.get("god")) {
+        if (! (boolean) config.get("god")) {
             config.set("god", true);
             sender.sendMessage("Lang.GOD_ENABLED.get()");
         } else {
