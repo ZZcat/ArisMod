@@ -10,8 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
 
-public class MyFirstListener implements Listener {
-
+public class StrongMobs implements Listener {
 	@EventHandler
 	public void creatureSpawnEvent(CreatureSpawnEvent event) {
 		

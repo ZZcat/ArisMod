@@ -10,7 +10,7 @@ import org.bukkit.util.noise.SimplexOctaveGenerator;
 import com.aris.challenges.God;
 import com.aris.challenges.GodListener;
 import com.aris.challenges.HealCommand;
-import com.aris.challenges.MyFirstListener;
+import com.aris.challenges.StrongMobs;
 import com.aris.aris.PlayerHandler;
 import com.aris.challenges.ArisCommands;
 
@@ -30,8 +30,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class Main extends JavaPlugin{
-	public MyFirstListener myfirstl;
-	public static PlayerHandler playerHandler = new PlayerHandler();
+	public StrongMobs myfirstl;
+	public static PlayerHandler playerHandler = new PlayerHandler(); // Player feature
+	public static ActivationHandler activationHandler = new ActivationHandler(); // World feature
+	
 	
 	@Override
 	public void onEnable () {
@@ -41,7 +43,7 @@ public class Main extends JavaPlugin{
     	this.getCommand("aris").setExecutor(new ArisCommands());
 		
 		// Start myfirstl listener
-		myfirstl = new MyFirstListener();
+		myfirstl = new StrongMobs();
     	getServer().getPluginManager().registerEvents(myfirstl, this);
     	
     	// god
